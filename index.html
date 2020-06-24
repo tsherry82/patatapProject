@@ -6,11 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patatap</title>
     <script src="paper-full.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.js"></script>
     <script type="text/paperscript" canvas="myCanvas">
+
+        var sound = new Howl({
+            src: ['sounds/bubbles.mp3']
+          });
+          
 
     var circles = []
     
     function onKeyDown(event) {
+    sound.play();
     var maxPoint = new Point(view.size.width, view.size.height);
     var randomPoint = Point.random();
     var point = maxPoint * randomPoint;
